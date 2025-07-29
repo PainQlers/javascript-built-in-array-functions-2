@@ -374,4 +374,15 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+function showMembersName () {
+  let showName = bills.filter((bill) => {
+    if(bill.member){
+      return bill.member
+    }
+  }).map((bill) => {
+    return bill.member.name
+  })
+  return showName
+}
+
+console.log(showMembersName(bills));

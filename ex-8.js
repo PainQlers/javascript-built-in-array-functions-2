@@ -374,5 +374,18 @@ const bills = [
 ];
 
 // Start coding here
+function totalProvincePay (bill) {
+    let total = bills.reduce((acc,bill) =>{
+        if (!acc[bill.location]) {
+            acc[bill.location] = bill.total
+        } else {
+            acc[bill.location] += bill.total;
+        }
+        return acc
+    },{})
+        
+    return total
+}
 
-const totalPaidByLocation;
+console.log(totalProvincePay(bills));
+
